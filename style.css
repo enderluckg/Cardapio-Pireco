@@ -1,32 +1,70 @@
-*
-{
-    margin: 0px;
-    box-sizing: border-box; 
-    transition: 5s;
+:root {
+    --bg-color: #fff;
+    --text-color: #000;
+    --header-bg: #fff;
+    --input-bg: #F5F5F5;
+    --accent-color: red;
+    --border-color: #000;
+    --sub-header-border: #000;
+    --secondary-bg: #CECECE;
+    /* For buttons */
+    --footer-bg: #000;
+    --footer-text: #CECECE;
+    --card-bg: #fff;
 }
 
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #1e1e1e;
+    --input-bg: #2c2c2c;
+    --accent-color: #ff4d4d;
+    --border-color: #444;
+    --sub-header-border: #444;
+    --secondary-bg: #333;
+    --card-bg: #1e1e1e;
+}
 
-header
-{
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#superheader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: var(--header-bg);
+}
+
+header {
     width: 100%;
     height: 15vh;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     position: relative;
-
+    /* Ensure relative positioning for absolute children if needed */
 }
 
-#LogoHeader
-{
+#LogoHeader {
     width: 5vw;
-    transition: 3s;
-
+    transition: 1s !important;
 }
 
-#divPesquisa
-{
-    background-color: #F5F5F5;
+#Content {
+    margin-top: 15vh;
+}
+
+#divPesquisa {
+    background-color: var(--input-bg);
     border-radius: 40px;
     border: 0px;
     outline: 0px;
@@ -34,192 +72,44 @@ header
     height: 3vw;
     padding: 5px 10px;
     position: relative;
+    transition: width 1s;
+    /* Keep specific transition */
 }
 
-#contentPesquisa
-{
+#contentPesquisa {
     position: absolute;
     right: 5%;
 }
 
-#divPesquisa img 
-{
+#divPesquisa img {
     height: auto;
     z-index: 99;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     transition: 0.5s;
-
 }
 
-#divPesquisa input
-{
+#divPesquisa input {
     display: none;
     width: 100%;
     height: 100%;
-    background-color: #F5F5F5;
-    border-radius: 40px;
-    border: 0px;
-    outline: 0px
-    
-}
-
-#SubHeader
-{
-    border-bottom: 1px black solid;
-    padding-bottom: 2vh;
-    display: flex;
-
-}
-
-#btnOpcoes
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 4vw;
-    height: 4vh;
-    border-radius: 5px;
-    background-color: #CECECE;
-    margin-left: 3vw;
-}
-
-.Circulo
-{
-    background-color: black;
-    border-radius: 70%;
-    width: 1vw;
-    height: 1vw;
-    margin-top: 3px;
-}
-
-#ContentClasses
-{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    margin-left: 5vw;
-}
-
-.Classes
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Classes:hover
-{
-    border-bottom: 1px solid red;
-}
-
-#Content
-{
-    padding: 10px;
-}
-
-#Content h2
-{
-    font-size: 30px;
-    margin-top: 2vh;
-}
-
-.Categoria
-{
-    margin-bottom: 2vh;
-}
-
-.Produto
-{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 20px;
-    font-size: 20px;
-    margin-top: 2vh;
-}
-
-.Descricao
-{
-    padding: 5px 35px;
-}
-
-@media screen and (max-width: 768px) {
-    
-
-header
-{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    position: relative;
-
-}
-
-#LogoHeader
-{
-    width: 18vw;
-    transition: 3s;
-
-}
-
-#divPesquisa
-{
-    background-color: #F5F5F5;
+    background-color: transparent;
+    /* Changed to transparent to inherit form parent */
     border-radius: 40px;
     border: 0px;
     outline: 0px;
-    width: 10vw;
-    height: 10vw;
-    padding: 5px 10px;
-    position: relative;
+    color: var(--text-color);
 }
 
-#contentPesquisa
-{
-    position: absolute;
-    right: 5%;
-}
-
-#divPesquisa img 
-{
-    height: auto;
-    z-index: 99;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-    transition: 0.5s;
-
-}
-
-#divPesquisa input
-{
-    display: none;
-    width: 100%;
-    height: 100%;
-    background-color: #F5F5F5;
-    border-radius: 40px;
-    border: 0px;
-    outline: 0px
-    
-}
-
-#SubHeader
-{
-    border-bottom: 1px black solid;
+#SubHeader {
+    border-bottom: 1px solid var(--sub-header-border);
     padding-bottom: 2vh;
     display: flex;
-
 }
 
-#btnOpcoes
-{
+#btnOpcoes {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,96 +117,217 @@ header
     width: 4vw;
     height: 4vh;
     border-radius: 5px;
-    background-color: #CECECE;
+    background-color: var(--secondary-bg);
     margin-left: 3vw;
 }
 
-.Circulo
-{
-    background-color: black;
-    border-radius: 70%;
-    width: 1vw;
-    height: 1vw;
-    margin-top: 3px;
-}
-
-#ContentClasses
-{
+#ContentClasses {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    margin-left: 1vw;
-     overflow-x: auto;   /* ativa scroll horizontal */
-    white-space: nowrap;
 }
 
-.Classes
-{
+.Classes {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 4vw;
+    cursor: pointer;
 }
 
-.Classes:hover
-{
-    border-bottom: 1px solid red;
+.Classes:hover {
+    border-bottom: 1px solid var(--accent-color);
 }
 
-
-#Content
-{
+#Content {
     padding: 10px;
 }
 
-#Content h2
-{
+#Content h2 {
     font-size: 30px;
     margin-top: 2vh;
-    color:#FF0000;
+    color: var(--text-color);
+    /* Ensure headings use var */
 }
 
-.Categoria
-{
+.Categoria {
     margin-bottom: 2vh;
 }
 
-
-
-
-.Produto
-{
+.Produto {
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
     font-size: 20px;
     margin-top: 2vh;
+    background-color: var(--card-bg);
+    /* Add card bg if wanted, or keep transparent */
 }
 
-.Descricao
-{
+.Descricao {
     padding: 5px 35px;
+    color: var(--text-color);
+    opacity: 0.8;
+    /* Slight opacity for description */
 }
 
-
-
+/* Toggle Theme Button */
+#themeToggle {
+    position: absolute;
+    left: 5%;
+    /* Opposite to search */
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    z-index: 100;
 }
 
-footer
-{
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    grid-template-rows: 1fr;
+@media screen and (max-width: 768px) {
+
+    header {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #LogoHeader {
+        width: 18vw;
+        transition: 3s;
+    }
+
+    #divPesquisa {
+        background-color: var(--input-bg);
+        border-radius: 40px;
+        border: 0px;
+        outline: 0px;
+        width: 10vw;
+        height: 10vw;
+        padding: 5px 10px;
+        position: relative;
+    }
+
+    #contentPesquisa {
+        position: absolute;
+        right: 5%;
+    }
+
+    #divPesquisa img {
+        height: auto;
+        z-index: 99;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        transition: 0.5s;
+    }
+
+    #divPesquisa input {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border-radius: 40px;
+        border: 0px;
+        outline: 0px
+    }
+
+    #SubHeader {
+        border-bottom: 1px solid var(--sub-header-border);
+        padding-bottom: 2vh;
+        display: flex;
+    }
+
+    #Content {
+        margin-top: 15vh;
+    }
+
+    .Circulo {
+        background-color: var(--text-color);
+        border-radius: 70%;
+        width: 1vw;
+        height: 1vw;
+        margin-top: 3px;
+    }
+
+    #ContentClasses {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        margin-left: 1vw;
+        overflow-x: hidden;
+        /* ativa scroll horizontal */
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    .Classes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 4vw;
+    }
+
+    .Classes:hover {
+        border-bottom: 1px solid var(--accent-color);
+    }
+
+    #Content {
+        padding: 10px;
+    }
+
+    #Content h2 {
+        font-size: 30px;
+        margin-top: 2vh;
+        color: var(--accent-color);
+        /* Kept red for mobile as per original */
+    }
+
+    .Categoria {
+        margin-bottom: 2vh;
+    }
+
+    .Produto {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 20px;
+        font-size: 20px;
+        margin-top: 2vh;
+    }
+
+    .Descricao {
+        padding: 5px 35px;
+    }
+}
+
+footer {
+
     width: 100%;
-    height: 8vw;
+    height: 10vh;
+    background-color: #000;
+    color: #CECECE;
+    font-size: 0.8em;
+}
+
+
+
+#FooterGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 10vh;
     background-color: #000;
 }
 
-#FooterImg
-{
-    background-image: url(img/LogoPireco.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 6vw 6vw;
+.FooterGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
